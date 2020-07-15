@@ -155,7 +155,7 @@ Cette amélioration implique un compromis qui  repose sur le principe qu'un adve
 Il y a deux entités principales dans Elrond : les utilisateurs et les nœuds. Les utilisateurs détiennent tous un nombre (fini) de paires de clés ($Pk/sk$) publiques / privées (par exemple dans une ou plusieurs applications de portefeuille). Ils utilisent le réseau Elrond pour déployer des transactions signées, afin de transférer de la valeur, ou pour exécuter des contrats intelligents (\textit{Smarts Contracts}). Les utilisateurs sont identifiés par l'une de leurs adresses de compte (dérivées de la clé publique). Les nœuds sont représentés par les terminaux dont est constitué le réseau Elrond, et peuvent être engagés passivement ou activement dans le traitement des tâches. Les valideurs éligibles sont des participants actifs dans le réseau Elrond. Plus précisément, ils sont chargés de l’application du consensus, de l'ajout de blocs, du maintien du statut, en échange de quoi, ils perçoivent des récompenses. Chaque valideur éligible est identifié de manière unique par une clé publique dérivée à la fois de l'adresse où est déposé l’enjeu, et aussi de l'identifiant du nœud.
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{Fig1_Page1.jpg} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig1_Page1.jpg} % Figure image
 	\caption{Relations entre les entités Elrond} % Figure caption
 	\label{Fig.1} % Label for referencing with \ref{}
 \end{figure}
@@ -311,7 +311,7 @@ L'objectif principal étant d'augmenter le débit au-delà des milliers de trans
 L'ensemble du système de partage est basé sur un arbre binaire qui distribue les adresses des comptes, favorise la scalabilité et traite les transitions d'états. Une représentation de l'arbre est visible sur la figure \ref{Fig.2}.
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{Fig2} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig2} % Figure image
 	\caption{Exemple d'une structure arborescente de fragment} % Figure caption
 	\label{Fig.2} % Label for referencing with \ref{}
 \end{figure}
@@ -371,7 +371,7 @@ Pour la redondance des fragments, la traçabilité des transitions d'états et l
 Sur la chaîne  de blocs, le partage d'états est exposé aux échecs de fragments lorsqu'il y a un nombre insuffisant de nœuds en ligne dans un fragment ou que la distribution est concentrée géographiquement. Dans le cas peu probable où un fragment échoue (soit le fragment ne peut pas être contacté - tous les nœuds sont hors-lignes ou un consensus ne peut pas être atteint - plus d'un des nœuds ne répond pas), il y a un risque élevé que l'architecture entière ne repose que sur des nœuds super-pleins \cite{2}, qui téléchargent entièrement chaque bloc de chaque fragment, vérifiant l'intégralité. Comme le montre la figure \ref{Fig.3}, notre protocole dispose d'un mécanisme de protection qui introduit un compromis dans la structure de maintien de l'état en imposant aux fragment du dernier niveau de l'arbre de maintenir également l'état de leurs frères. Ce mécanisme réduit la communication et élimine l’amorçage lorsque des  fragments fusionnent puisqu'ils ont déjà les données.
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{Fig3} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig3} % Figure image
 	\caption{Redondance des fragments à travers les époques} % Figure caption
 	\label{Fig.3} % Label for referencing with \ref{}
 \end{figure}
@@ -586,7 +586,7 @@ Il n'y a pas de limite sur le nombre de miniblocs avec le même expéditeur et l
 
 \begin{figure*}[h]
          \centering
-	\includegraphics[width=\linewidth]{Fig4} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig4} % Figure image
 	\caption{Traitement des transactions interfragments (\textit{Shards})} % Figure caption
 	\label{Fig.4} % Label for referencing with \ref{}
 \end{figure*}
@@ -616,13 +616,13 @@ L'exécution de contrats intelligents est un élément clé pour toutes les futu
 Elrond se concentre sur la mise en œuvre de la machine virtuelle Elrond, un moteur conforme à la norme EVM. 
 
 \begin{figure}[h]
-	\includegraphics[width=\linewidth]{Fig5} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig5} % Figure image
 	\caption{Traitement indépendant des transactions dans de contrats intelligents (Smart Contracts) simples qui peuvent être exécutés sans garantir l'ordre} % Figure caption
 	\label{Fig.5} % Label for referencing with \ref{}
 \end{figure}
 
 \begin{figure}[h]
-	\includegraphics[width=\linewidth]{Fig6} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig6} % Figure image
 	\caption{Mécanisme pour les contrats intelligents (Smart Contracts) corrélés qui peuvent uniquement être exécutés séquentiellement} % Figure caption
 	\label{Fig.6} % Label for referencing with \ref{}
 \end{figure}
@@ -630,7 +630,7 @@ Elrond se concentre sur la mise en œuvre de la machine virtuelle Elrond, un mot
 En vue de l'adoption, la conformité à EVM est extrêmement importante, en raison du grand nombre de contrats intelligents construits sur la plateforme d'Ethereum.
 
 \begin{figure}[h]
-	\includegraphics[width=\linewidth]{Fig7} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig7} % Figure image
 	\caption{Couche d'abstraction pour les contrats intelligents} % Figure caption
 	\label{Fig.7} % Label for referencing with \ref{}
 \end{figure}
@@ -652,7 +652,7 @@ Un grand avantage du framework K est que l'on peut générer un interpréteur po
 Il existe déjà plusieurs langages de contrats intelligents spécifiés dans le Framework K, ou dont les spécifications sont en cours d'élaboration. Le réseau Elrond prendra en charge trois langages de bas niveau : IELE VM, KEVM et WASM.
 
  \begin{figure}[h]
-	\includegraphics[width=\linewidth]{Fig8} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig8} % Figure image
 	\caption{Exécution de la Machine Virtuelle (VM) Elrond} % Figure caption
 	\label{Fig.8} % Label for referencing with \ref{}
 \end{figure}
@@ -665,7 +665,7 @@ Avoir une spécification linguistique et générer l'interpréteur n'est que la 
 \end{itemize}
 
 \begin{figure}[h]
-	\includegraphics[width=\linewidth]{Fig9} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig9} % Figure image
 	\caption{Exécution de la Machine Virtuelle (VM) Elrond} % Figure caption
 	\label{Fig.9} % Label for referencing with \ref{}
 \end{figure}
@@ -724,7 +724,7 @@ Le processus de remaniement pour mélanger les nœuds se déroule en plusieurs �
 
 \begin{figure*}[h]
          \centering
-	\includegraphics[width=\linewidth]{Fig10} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig10} % Figure image
 	\caption{Remaniement des nœuds à la fin de chaque époque} % Figure caption
 	\label{Fig.10} % Label for referencing with \ref{}
 \end{figure*}
@@ -819,7 +819,7 @@ La scalabilité des architectures des Chaînes de blocs est un problème critiqu
 
 \begin{figure*}[h]
          \centering
-	\includegraphics[width=\linewidth]{Fig11} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig11} % Figure image
 	\caption{Estimation du stockage - Architectures distribuées validées fonctionnant à un débit (TPS) moyen correspondant à celui de VISA } % Figure caption
 	\label{Fig.11} % Label for referencing with \ref{}
 \end{figure*}
@@ -860,13 +860,13 @@ Outre les capacités de calcul des valideurs/promoteurs de bloc et l'infrastruct
 Avec Elrond, le mécanisme de répartition (détaillé dans la section \ref{Conse}) permet un meilleur délai de finalisation en acheminant les transactions directement sur le bon fragment, ce qui atténue les retards globaux.
 
 \begin{figure}[h]
-	\includegraphics[width=\linewidth]{Fig13} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig13} % Figure image
 	\caption{Débit des transactions} % Figure caption
 	\label{Fig.13} % Label for referencing with \ref{}
 \end{figure}
 
 \begin{figure}[h]
-	\includegraphics[width=\linewidth]{Fig14} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig14} % Figure image
 	\caption{Finalité des transactions } % Figure caption
 	\label{Fig.14} % Label for referencing with \ref{}
 \end{figure}
@@ -919,7 +919,7 @@ Le modèle de consensus choisi implique une communication à travers plusieurs t
 
 \begin{figure*}[h]
          \centering
-	\includegraphics[width=\linewidth]{Fig12} % Figure image
+	\includegraphics[width=\linewidth]{./images/Fig12} % Figure image
 	\caption{Débit du réseau mesuré en transactions par seconde avec une vitesse globale du réseau de 8 Mo/s} % Figure caption
 	\label{Fig.12} % Label for referencing with \ref{}
 \end{figure*}
